@@ -1,0 +1,404 @@
+/**
+ * Main Feedback Page Styles
+ * Main page for viewing and managing employee feedback
+ */
+
+.main-feedback-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-page-primary, #ffffff);
+  position: relative;
+}
+
+/* Top Navigation Bar */
+.main-feedback-page__top-nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: var(--color-page-primary, #ffffff);
+  border-bottom: 0.5px solid rgba(174, 174, 174, 0.45);
+  box-shadow: inset 0px -0.5px 0px 0px rgba(174, 174, 174, 0.45);
+  position: relative;
+  z-index: 10;
+}
+
+.main-feedback-page__logo {
+  padding: 0 20px;
+}
+
+.main-feedback-page__logo-text {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-primitive-primary, #191919);
+  letter-spacing: 0;
+}
+
+.main-feedback-page__nav-buttons {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 0;
+}
+
+.main-feedback-page__nav-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.16px;
+  color: var(--color-primitive-primary, #191919);
+  white-space: nowrap;
+}
+
+.main-feedback-page__nav-button:hover {
+  background-color: var(--color-state-container-transparent-1-active, rgba(25, 25, 25, 0.1));
+}
+
+.main-feedback-page__nav-button svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.main-feedback-page__user-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.main-feedback-page__user-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.main-feedback-page__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(229, 149, 148, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.12px;
+  color: var(--color-primitive-default-fixed, #ffffff);
+  flex-shrink: 0;
+}
+
+.main-feedback-page__user-name {
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.16px;
+  color: var(--color-primitive-primary, #191919);
+  white-space: nowrap;
+}
+
+.main-feedback-page__user-actions {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.main-feedback-page__action-icon {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--color-primitive-primary, #191919);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-feedback-page__action-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Main Content Area */
+.main-feedback-page__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0;
+  padding-bottom: 60px;
+  width: 760px; /* Fixed width to match Figma design */
+  margin: 0 auto;
+  margin-left: 300px; /* Space for Navigation Bar (280px + 20px gap) */
+  margin-right: 360px; /* Space for Widget (340px + 20px gap) */
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.main-feedback-page__header {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 20px; /* 20px padding on both sides as per design */
+  width: 100%;
+  max-width: 760px; /* Ensure header matches content width */
+  box-sizing: border-box;
+}
+
+.main-feedback-page__title {
+  font-family: var(--font-family-primary);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0;
+  color: var(--color-primitive-primary, #191919);
+  margin: 0;
+  padding: 30px 0 0 0;
+}
+
+.main-feedback-page__search-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 720px; /* Cards and search section remain 720px within 760px container with 20px padding */
+  box-sizing: border-box;
+}
+
+.main-feedback-page__search {
+  height: 32px;
+}
+
+.main-feedback-page__filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.main-feedback-page__filter-wrapper {
+  position: relative;
+  z-index: 100;
+}
+
+.main-feedback-page__filter-wrapper .dropdown {
+  top: calc(100% + 8px);
+  left: 0;
+}
+
+/* List Section */
+.main-feedback-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 20px; /* 20px padding on both sides as per design */
+  width: 100%;
+  max-width: 760px; /* Match content container width */
+  box-sizing: border-box;
+}
+
+/* Navigation Bar (Left Sidebar) */
+.main-feedback-page__nav-bar {
+  position: absolute;
+  left: 0;
+  top: 74px;
+  width: 280px;
+  z-index: 5;
+  height: calc(100vh - 74px);
+  overflow-y: auto;
+}
+
+/* Widget (Right Sidebar) */
+.main-feedback-page__widget {
+  position: absolute;
+  right: 0;
+  top: 74px;
+  width: 340px;
+  z-index: 5;
+  height: calc(100vh - 74px);
+  overflow-y: auto;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.main-feedback-page__widget-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-primitive-neutral-2, #d4d4d4);
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: var(--color-page-primary, #ffffff);
+}
+
+.main-feedback-page__widget-title {
+  padding: 20px;
+  padding-bottom: 10px;
+  border-radius: 16px 16px 0 0;
+}
+
+.main-feedback-page__widget-title h2 {
+  font-family: var(--font-family-primary);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: var(--color-primitive-primary, #191919);
+  margin: 0;
+  padding: 0;
+}
+
+.main-feedback-page__widget-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 10px 0;
+}
+
+/* Icon-avatar wrapper inside Cell icon slot */
+.main-feedback-page__icon-avatar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cell components in widget */
+.main-feedback-page__widget-content .cell {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+/* Icon size for widget cells */
+.main-feedback-page__widget-content .cell--size-M .cell__icon--left {
+  width: 34px !important;
+  height: 34px !important;
+}
+
+.main-feedback-page__widget-content .cell .main-feedback-page__icon-avatar-wrapper svg {
+  width: 34px;
+  height: 34px;
+}
+
+/* Icon styling for competencies */
+.main-feedback-page__competency-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-feedback-page__competency-icon.success {
+  color: rgba(92, 173, 154, 1);
+}
+
+.main-feedback-page__competency-icon.warning {
+  color: rgba(216, 77, 77, 1);
+}
+
+/* Skill icon wrapper styling */
+.main-feedback-page__skill-icon-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding-top: 0;
+  color: var(--color-primitive-primary, #191919);
+}
+
+/* Ensure avatar icon fits fully inside left Cell icon slot in widget */
+.main-feedback-page__widget-content .cell__icon--left {
+  width: 34px;
+  height: 34px;
+}
+
+/* Details Sidebar (Right Panel opened from PageAction) */
+.main-feedback-page__details-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 480px;
+  background-color: var(--color-page-primary, #ffffff);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08);
+  border-left: 1px solid var(--color-primitive-neutral-2, #d4d4d4);
+  z-index: 10; /* Above navigation bar and right widget */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.main-feedback-page__details-sidebar-content {
+  padding: 0 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.main-feedback-page__drawer-search {
+  margin-bottom: 12px;
+}
+
+.main-feedback-page__drawer-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.main-feedback-page__drawer-competencies {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove horizontal padding from Cells only inside Drawer competencies list */
+.main-feedback-page__drawer-competencies .cell {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.main-feedback-page__drawer-empty {
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  color: var(--color-primitive-secondary, #676767);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.main-feedback-page__details-sidebar-title {
+  margin: 0 0 8px 0;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-primitive-primary, #191919);
+}
+
+.main-feedback-page__details-sidebar-text {
+  margin: 0;
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-primitive-secondary, #676767);
+}
+

@@ -1,0 +1,386 @@
+/**
+ * Skill Page Styles
+ * Page for viewing individual skill details, progress, and feedback
+ */
+
+.skill-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-page-primary, #ffffff);
+  position: relative;
+}
+
+/* Top Navigation Bar */
+.skill-page__top-nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: var(--color-page-primary, #ffffff);
+  border-bottom: 0.5px solid rgba(174, 174, 174, 0.45);
+  box-shadow: inset 0px -0.5px 0px 0px rgba(174, 174, 174, 0.45);
+  position: relative;
+  z-index: 10;
+}
+
+.skill-page__logo {
+  padding: 0 20px;
+}
+
+.skill-page__logo-text {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-primitive-primary, #191919);
+  letter-spacing: 0;
+}
+
+.skill-page__nav-buttons {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 0;
+}
+
+.skill-page__nav-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.16px;
+  color: var(--color-primitive-primary, #191919);
+  white-space: nowrap;
+}
+
+.skill-page__nav-button:hover {
+  background-color: var(--color-state-container-transparent-1-active, rgba(25, 25, 25, 0.1));
+}
+
+.skill-page__nav-button svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.skill-page__user-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.skill-page__user-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.skill-page__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(229, 149, 148, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.12px;
+  color: var(--color-primitive-default-fixed, #ffffff);
+  flex-shrink: 0;
+}
+
+.skill-page__user-name {
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.16px;
+  color: var(--color-primitive-primary, #191919);
+  white-space: nowrap;
+}
+
+.skill-page__user-actions {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.skill-page__action-icon {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--color-primitive-primary, #191919);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-page__action-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Main Content Area */
+.skill-page__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0;
+  padding-bottom: 60px;
+  width: 760px; /* Fixed width to match Figma design */
+  margin: 0 auto;
+  margin-left: 300px; /* Space for Navigation Bar (280px + 20px gap) */
+  margin-right: 360px; /* Space for Widget (340px + 20px gap) */
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.skill-page__header {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 20px; /* 20px padding on both sides as per design */
+  width: 100%;
+  max-width: 760px; /* Ensure header matches content width */
+  box-sizing: border-box;
+}
+
+.skill-page__title {
+  font-family: var(--font-family-primary);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0;
+  color: var(--color-primitive-primary, #191919);
+  margin: 0;
+  padding: 30px 0 0 0;
+}
+
+.skill-page__search-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  padding-bottom: 15px;
+  max-width: 720px; /* Cards and search section remain 720px within 760px container with 20px padding */
+  box-sizing: border-box;
+}
+
+.skill-page__search {
+  height: 32px;
+}
+
+.skill-page__filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.skill-page__filter-wrapper {
+  position: relative;
+  z-index: 100;
+}
+
+.skill-page__filter-wrapper .dropdown {
+  top: calc(100% + 8px);
+  left: 0;
+}
+
+/* BarGraph Section */
+.skill-page__graph {
+  padding: 0 20px;
+  width: 100%;
+  max-width: 760px;
+  box-sizing: border-box;
+}
+
+/* List Section */
+.skill-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 20px; /* 20px padding on both sides as per design */
+  width: 100%;
+  max-width: 760px; /* Match content container width */
+  box-sizing: border-box;
+}
+
+.skill-page__empty {
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  color: var(--color-primitive-secondary, #676767);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.skill-page__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+}
+
+.skill-page__error h1 {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-primitive-primary, #191919);
+}
+
+.skill-page__error button {
+  padding: 10px 20px;
+  border: 1px solid var(--color-primitive-neutral-2, #d4d4d4);
+  border-radius: 8px;
+  background-color: var(--color-page-primary, #ffffff);
+  cursor: pointer;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  color: var(--color-primitive-primary, #191919);
+}
+
+.skill-page__error button:hover {
+  background-color: var(--color-state-container-transparent-1-active, rgba(25, 25, 25, 0.1));
+}
+
+/* Navigation Bar (Left Sidebar) */
+.skill-page__nav-bar {
+  position: absolute;
+  left: 0;
+  top: 74px;
+  width: 280px;
+  z-index: 5;
+  height: calc(100vh - 74px);
+  overflow-y: auto;
+}
+
+/* Widget (Right Sidebar) */
+.skill-page__widget {
+  position: absolute;
+  right: 0;
+  top: 74px;
+  width: 340px;
+  z-index: 5;
+  height: calc(100vh - 74px);
+  overflow-y: auto;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.skill-page__widget-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-primitive-neutral-2, #d4d4d4);
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: var(--color-page-primary, #ffffff);
+}
+
+.skill-page__widget-title {
+  padding: 20px;
+  padding-bottom: 10px;
+  border-radius: 16px 16px 0 0;
+}
+
+.skill-page__widget-title h2 {
+  font-family: var(--font-family-primary);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: var(--color-primitive-primary, #191919);
+  margin: 0;
+  padding: 0;
+}
+
+.skill-page__widget-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 10px 0;
+}
+
+/* Icon-avatar wrapper inside Cell icon slot */
+.skill-page__icon-avatar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cell components in widget */
+.skill-page__widget-content .cell {
+  width: 100%;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+/* Align icon and content horizontally (vertically centered) */
+.skill-page__widget-content .cell .cell__content-wrapper {
+  display: flex;
+}
+
+/* Icon styling for rating */
+.skill-page__rating-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-page__rating-icon.success {
+  color: rgba(92, 173, 154, 1);
+}
+
+.skill-page__warning-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure avatar icon fits fully inside left Cell icon slot in widget */
+.skill-page__widget-content .cell__icon--left {
+  width: 34px;
+  height: 34px;
+}
+
+/* Override VerticalMarker positioning for SkillPage - align bars to bottom */
+.skill-page__graph .vertical-marker__bars {
+  align-items: flex-end;
+}
+
+.skill-page__graph .vertical-marker__bar-fill {
+  top: auto;
+  bottom: 0;
+}
+
+.skill-page__graph .bar-graph__bars {
+  align-items: flex-end;
+}
+

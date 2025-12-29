@@ -1,0 +1,75 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--color-page-secondary, #f9f9f9);
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bg-default, #ffffff);
+  border-bottom: 1px solid var(--color-primitive-neutral-2, #d4d4d4);
+  padding: 16px 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.app-title {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: var(--font-weight-demi-bold, 600);
+  color: var(--color-primitive-primary, #191919);
+  margin: 0 0 16px 0;
+}
+
+.app-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.app-nav-button {
+  padding: 8px 16px;
+  border: 1px solid var(--color-primitive-neutral-2, #d4d4d4);
+  border-radius: var(--rounding-1x, 4px);
+  background-color: var(--color-bg-default, #ffffff);
+  color: var(--color-primitive-primary, #191919);
+  font-family: var(--font-family-primary);
+  font-size: 14px;
+  font-weight: var(--font-weight-medium, 500);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.app-nav-button:hover {
+  background-color: var(--color-state-container-transparent-1-active, rgba(25, 25, 25, 0.1));
+  border-color: var(--color-primitive-neutral-3, #c8c8c8);
+}
+
+.app-nav-button--active {
+  background-color: var(--color-bg-brand, #835de1);
+  color: var(--color-primitive-default-fixed, #ffffff);
+  border-color: var(--color-bg-brand, #835de1);
+}
+
+.app-nav-button--active:hover {
+  background-color: var(--color-state-bg-brand-active, #9b7ef1);
+  border-color: var(--color-state-bg-brand-active, #9b7ef1);
+}
+
+.app-main {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.app-main--full-page {
+  padding: 0;
+  max-width: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 120px);
+  background-color: var(--color-page-secondary, #f9f9f9);
+}
+
+
